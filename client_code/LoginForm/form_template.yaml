@@ -1,0 +1,38 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:dashboard.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Login, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: login_button
+    layout_properties: {grid_position: 'AZAVYY,RERRZT', slot: default}
+    event_bindings: {click: login_button_click}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: Signup, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: signup_button
+    layout_properties:
+      col_widths: {}
+      grid_position: AZAVYY,REUSFH
+    event_bindings: {click: signup_button_click}
+- type: form:Navbar
+  properties: {}
+  name: custom_1
+  layout_properties: {slot: sidebar}
+- type: RichText
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: null, content: Rexchange, font: '',
+    spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
+  name: rich_text_1
+  layout_properties: {slot: title}

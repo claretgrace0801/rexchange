@@ -1,0 +1,20 @@
+container: {type: DataRowPanel}
+components:
+- type: RichText
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: 18, content: '', font: '', spacing_above: small,
+    spacing_below: small, data: null, background: '', format: markdown}
+  name: rich_text_1
+  layout_properties: {column: SSKMLJ}
+  data_bindings:
+  - {property: content, code: 'self.item[''answer'']'}
+  components:
+  - type: RichText
+    properties: {role: null, align: right, tooltip: '', enable_slots: true, border: '',
+      foreground: '#7d7d7d', visible: true, font_size: 16, content: '', font: '',
+      spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
+    name: answer_author_text
+    layout_properties: {}
+    data_bindings:
+    - {property: content, code: 'self.item[''author_text'']'}
+is_package: true

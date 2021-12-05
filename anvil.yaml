@@ -1,0 +1,62 @@
+dependencies:
+- app_id: TX56HIJUL76WW4ZZ
+  version: {dev: false}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: false}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false}
+  server_config: {user_table: users}
+package_name: Research_Stack
+allow_embedding: false
+name: Research Stack
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox}
+metadata: {}
+startup_form: LandingForm
+db_schema:
+  questions_table:
+    title: Questions_Table
+    client: full
+    server: full
+    columns:
+    - name: doi
+      admin_ui: {width: 200}
+      type: string
+    - name: title
+      admin_ui: {width: 200}
+      type: string
+    - name: description
+      admin_ui: {width: 200}
+      type: string
+    - name: answers
+      admin_ui: {width: 200}
+      type: simpleObject
+    - name: author
+      admin_ui: {width: 200}
+      type: string
+    - name: qid
+      admin_ui: {width: 200}
+      type: number
+  users:
+    title: Users
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 100}
+      type: bool
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+renamed: true

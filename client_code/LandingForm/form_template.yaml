@@ -1,0 +1,45 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:dashboard.html'}
+  event_bindings: {}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{"TTOBBM":10,"CUMXNM":55,"TLGVEW":15}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: Label
+    properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'DOI:', font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: doi_label
+    layout_properties: {grid_position: 'HBHPKW,TTOBBM'}
+    event_bindings: {}
+  - type: TextBox
+    properties: {role: null, align: left, hide_text: false, tooltip: '', placeholder: 10.1103/PhysRevLett.105.050403,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      font: '', spacing_above: small, type: text, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: doi
+    layout_properties: {grid_position: 'HBHPKW,CUMXNM'}
+    event_bindings: {}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: GO, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: doi_search
+    layout_properties: {grid_position: 'HBHPKW,TLGVEW'}
+    event_bindings: {click: search_doi}
+- type: RichText
+  properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+    foreground: '', visible: true, font_size: null, content: Rexchange, font: '',
+    spacing_above: small, spacing_below: small, data: null, background: '', format: markdown}
+  name: rich_text_1
+  layout_properties: {slot: title}
+- type: form:Navbar
+  properties: {}
+  name: custom_1
+  layout_properties: {slot: sidebar}
